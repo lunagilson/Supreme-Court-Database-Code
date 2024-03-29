@@ -1,0 +1,81 @@
+# ====================
+Export Tables to LaTex
+# ====================
+
+# Logistic Regression Models
+
+eststo clear
+logit precedentAlteration privacy
+eststo model1
+
+logit precedentAlteration privacy med
+eststo model2
+
+logit precedentAlteration privacy legalbasis
+eststo model3
+
+logit precedentAlteration privacy change_in_comp
+eststo model4
+
+logit precedentAlteration privacy term
+eststo model5
+
+logit precedentAlteration privacy med legalbasis change_in_comp term
+eststo model6
+
+
+esttab model1 model2 model3 model4 model5 model6 using table1a.tex, replace ///
+    collabel(privacy "Privacy" ///
+             med "Ideology"  ///
+             legalbasis "Legal Basis" ///
+             change_in_comp "Change in Composition" ///
+             term "Term of Court" ///
+             _cons "Constant") ///
+    title("Logistic Regression Analysis") ///
+    mtitle("Model 1" "Model 2" "Model 3" "Model 4" "Model 5" "Model 6") eqlabel("\textbf{Variables}") ///
+    stats(N ll, fmt(0 2) label("Num of Obs" "Log Likelihood"))
+
+		
+	
+//Descriptive Statistics
+estpost tab precedentAlteration
+eststo percDV
+esttab percDV using table4a.tex, replace ///
+	cells("pct(fmt(2) label (\%))") ///
+	title("Summary Statistics for Dependent Variable (N=13,779)")
+	
+	
+	
+	********************
+	***CHIEF JUSTICES***
+	********************
+eststo clear
+logit precedentAlteration privacy if chief_==1
+eststo model1a
+logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==1
+eststo model1b
+
+logit precedentAlteration privacy if chief_==2
+eststo model2a
+logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==2
+eststo model2b 
+
+logit precedentAlteration privacy if chief_==3
+eststo model3a
+logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==3
+eststo model3b
+
+logit precedentAlteration privacy if chief_==4
+eststo model4a
+logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==4
+eststo model4b
+
+logit precedentAlteration privacy if chief_==5
+eststo model5a
+logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==5
+eststo model5b
+
+
+esttab model1a model1b model2a model2b model3a model3b model4a model4b model5a model5b using chiefjusticeregression.tex, replace 
+
+
