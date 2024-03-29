@@ -1,12 +1,243 @@
 
                                                         ***CHIEF JUSTICE REGRESSION***
 
+# =======================================
+ UNADJUSTED MODELS FOR EACH CHIEF JUSTICE
+# =======================================
+
+logit precedentAlteration privacy if chief_==1
+
+Iteration 0:  Log likelihood = -126.15479  
+Iteration 1:  Log likelihood = -126.04597  
+Iteration 2:  Log likelihood = -125.79311  
+Iteration 3:  Log likelihood = -125.79259  
+Iteration 4:  Log likelihood = -125.79259  
+
+Logistic regression                                     Number of obs =  1,442
+                                                        LR chi2(1)    =   0.72
+                                                        Prob > chi2   = 0.3947
+Log likelihood = -125.79259                             Pseudo R2     = 0.0029
+
+-------------------------------------------------------------------------------------
+precedentAlteration | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+            privacy |    1.01879   1.044032     0.98   0.329    -1.027474    3.065054
+              _cons |  -4.063312   .2058713   -19.74   0.000    -4.466813   -3.659812
+-------------------------------------------------------------------------------------
+
+. logit precedentAlteration privacy if chief_==2
+
+Iteration 0:  Log likelihood = -419.38782  
+Iteration 1:  Log likelihood = -417.63207  
+Iteration 2:  Log likelihood = -416.20021  
+Iteration 3:  Log likelihood = -416.19163  
+Iteration 4:  Log likelihood = -416.19163  
+
+Logistic regression                                     Number of obs =  3,405
+                                                        LR chi2(1)    =   6.39
+                                                        Prob > chi2   = 0.0115
+Log likelihood = -416.19163                             Pseudo R2     = 0.0076
+
+-------------------------------------------------------------------------------------
+precedentAlteration | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+            privacy |   .9782437   .3456358     2.83   0.005     .3008099    1.655677
+              _cons |  -3.666091    .112523   -32.58   0.000    -3.886632    -3.44555
+-------------------------------------------------------------------------------------
+
+. logit precedentAlteration privacy if chief_==3
+
+Iteration 0:  Log likelihood = -455.20923  
+Iteration 1:  Log likelihood = -454.96326  
+Iteration 2:  Log likelihood = -454.96278  
+Iteration 3:  Log likelihood = -454.96278  
+
+Logistic regression                                     Number of obs =  4,259
+                                                        LR chi2(1)    =   0.49
+                                                        Prob > chi2   = 0.4826
+Log likelihood = -454.96278                             Pseudo R2     = 0.0005
+
+-------------------------------------------------------------------------------------
+precedentAlteration | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+            privacy |  -.3435246   .5151303    -0.67   0.505    -1.353162    .6661123
+              _cons |  -3.763242    .106038   -35.49   0.000    -3.971073   -3.555412
+-------------------------------------------------------------------------------------
+
+. logit precedentAlteration privacy if chief_==4
+
+Iteration 0:  Log likelihood = -309.42192  
+Iteration 1:  Log likelihood = -309.40875  
+Iteration 2:  Log likelihood = -309.40873  
+
+Logistic regression                                     Number of obs =  2,994
+                                                        LR chi2(1)    =   0.03
+                                                        Prob > chi2   = 0.8710
+Log likelihood = -309.40873                             Pseudo R2     = 0.0000
+
+-------------------------------------------------------------------------------------
+precedentAlteration | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+            privacy |   .0985926   .5983981     0.16   0.869    -1.074246    1.271431
+              _cons |  -3.828285   .1294216   -29.58   0.000    -4.081947   -3.574623
+-------------------------------------------------------------------------------------
+
+. logit precedentAlteration privacy if chief_==5
+
+Iteration 0:  Log likelihood = -217.93537  
+Iteration 1:  Log likelihood = -217.14405  
+Iteration 2:  Log likelihood = -216.14558  
+Iteration 3:  Log likelihood = -216.13818  
+Iteration 4:  Log likelihood = -216.13818  
+
+Logistic regression                                     Number of obs =  1,679
+                                                        LR chi2(1)    =   3.59
+                                                        Prob > chi2   = 0.0580
+Log likelihood = -216.13818                             Pseudo R2     = 0.0082
+
+-------------------------------------------------------------------------------------
+precedentAlteration | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+            privacy |   1.046274   .4894066     2.14   0.033     .0870545    2.005493
+              _cons |  -3.595718   .1545768   -23.26   0.000    -3.898683   -3.292753
+-------------------------------------------------------------------------------------
+
+
+# ==========
+ FULL MODELS
+# ==========
+. logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==1
+
+Iteration 0:  Log likelihood =  -115.6452  
+Iteration 1:  Log likelihood = -108.62843  
+Iteration 2:  Log likelihood = -104.57611  
+Iteration 3:  Log likelihood = -104.54649  
+Iteration 4:  Log likelihood = -104.54647  
+Iteration 5:  Log likelihood = -104.54647  
+
+Logistic regression                                     Number of obs =  1,303
+                                                        LR chi2(5)    =  22.20
+                                                        Prob > chi2   = 0.0005
+Log likelihood = -104.54647                             Pseudo R2     = 0.0960
+
+-------------------------------------------------------------------------------------
+precedentAlteration | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+            privacy |   .6871577   1.065678     0.64   0.519    -1.401534    2.775849
+                med |  -5.414145    6.00639    -0.90   0.367    -17.18645    6.358163
+         legalbasis |    1.87134   .4821474     3.88   0.000     .9263483    2.816331
+     change_in_comp |   .8248192   1.406913     0.59   0.558    -1.932679    3.582318
+               term |   .5535528   .8390036     0.66   0.509    -1.090864     2.19797
+              _cons |  -1080.287   1631.136    -0.66   0.508    -4277.254     2116.68
+-------------------------------------------------------------------------------------
+
+. logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==2
+
+Iteration 0:  Log likelihood = -367.73493  
+Iteration 1:  Log likelihood = -349.35376  
+Iteration 2:  Log likelihood = -338.73859  
+Iteration 3:  Log likelihood = -338.59601  
+Iteration 4:  Log likelihood = -338.59587  
+Iteration 5:  Log likelihood = -338.59587  
+
+Logistic regression                                     Number of obs =  2,715
+                                                        LR chi2(5)    =  58.28
+                                                        Prob > chi2   = 0.0000
+Log likelihood = -338.59587                             Pseudo R2     = 0.0792
+
+-------------------------------------------------------------------------------------
+precedentAlteration | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+            privacy |   .7852608   .3670437     2.14   0.032     .0658685    1.504653
+                med |  -.7193442   .2936877    -2.45   0.014    -1.294961   -.1437269
+         legalbasis |   1.330255   .2427246     5.48   0.000     .8545233    1.805986
+     change_in_comp |   .5264774   .2473705     2.13   0.033     .0416402    1.011315
+               term |  -.0343282   .0443919    -0.77   0.439    -.1213347    .0526783
+              _cons |   62.61178   87.03535     0.72   0.472    -107.9744    233.1979
+-------------------------------------------------------------------------------------
+
+. logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==3
+
+Iteration 0:  Log likelihood = -410.15616  
+Iteration 1:  Log likelihood = -401.00041  
+Iteration 2:  Log likelihood =  -400.4127  
+Iteration 3:  Log likelihood = -400.41087  
+Iteration 4:  Log likelihood = -400.41087  
+
+Logistic regression                                     Number of obs =  3,771
+                                                        LR chi2(5)    =  19.49
+                                                        Prob > chi2   = 0.0016
+Log likelihood = -400.41087                             Pseudo R2     = 0.0238
+
+-------------------------------------------------------------------------------------
+precedentAlteration | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+            privacy |  -.4973175   .5210333    -0.95   0.340    -1.518524    .5238889
+                med |   .7200082    .448243     1.61   0.108    -.1585319    1.598548
+         legalbasis |   .7937941   .2273023     3.49   0.000     .3482899    1.239298
+     change_in_comp |   .5041427   .2610636     1.93   0.053    -.0075325    1.015818
+               term |  -.0063569   .0237541    -0.27   0.789     -.052914    .0402002
+              _cons |   7.892183   46.95325     0.17   0.867    -84.13449    99.91886
+-------------------------------------------------------------------------------------
+
+. logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==4
+
+Iteration 0:  Log likelihood = -284.35363  
+Iteration 1:  Log likelihood = -274.35774  
+Iteration 2:  Log likelihood = -273.23177  
+Iteration 3:  Log likelihood =  -273.2308  
+Iteration 4:  Log likelihood =  -273.2308  
+
+Logistic regression                                     Number of obs =  2,719
+                                                        LR chi2(5)    =  22.25
+                                                        Prob > chi2   = 0.0005
+Log likelihood = -273.2308                              Pseudo R2     = 0.0391
+
+-------------------------------------------------------------------------------------
+precedentAlteration | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+            privacy |  -.2356213   .6068569    -0.39   0.698    -1.425039    .9537964
+                med |   1.497615   1.011051     1.48   0.139    -.4840087    3.479238
+         legalbasis |   1.229707   .2845895     4.32   0.000     .6719219    1.787492
+     change_in_comp |   .4245535   .3563521     1.19   0.234    -.2738838    1.122991
+               term |   .0666274   .0509607     1.31   0.191    -.0332538    .1665086
+              _cons |  -138.5882    102.323    -1.35   0.176    -339.1376    61.96129
+-------------------------------------------------------------------------------------
+
+. logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==5
+
+Iteration 0:  Log likelihood = -207.61885  
+Iteration 1:  Log likelihood = -196.42386  
+Iteration 2:  Log likelihood = -191.19443  
+Iteration 3:  Log likelihood = -191.15107  
+Iteration 4:  Log likelihood = -191.15099  
+Iteration 5:  Log likelihood = -191.15099  
+
+Logistic regression                                     Number of obs =  1,567
+                                                        LR chi2(5)    =  32.94
+                                                        Prob > chi2   = 0.0000
+Log likelihood = -191.15099                             Pseudo R2     = 0.0793
+
+-------------------------------------------------------------------------------------
+precedentAlteration | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+            privacy |   .5540761   .5037952     1.10   0.271    -.4333444    1.541497
+                med |   .7402337   .5575701     1.33   0.184    -.3525836    1.833051
+         legalbasis |   1.650224   .3300587     5.00   0.000     1.003321    2.297127
+     change_in_comp |  -.0248552   .3316358    -0.07   0.940    -.6748494    .6251391
+               term |    .000572   .0300533     0.02   0.985    -.0583314    .0594753
+              _cons |  -5.766473    60.4772    -0.10   0.924    -124.2996    112.7667
+-------------------------------------------------------------------------------------
+
+
+# =======
+  Summary
+# =======
 logit precedentAlteration privacy if chief_==1
 logit precedentAlteration privacy if chief_==2
 logit precedentAlteration privacy if chief_==3
 logit precedentAlteration privacy if chief_==4
 logit precedentAlteration privacy if chief_==5
-
 
 logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==1
 logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==2
