@@ -1,0 +1,9 @@
+tab precedentAlteration
+/*summary table for DV- precedent alteration (binary)
+  formal alteration |
+       of precedent |      Freq.     Percent        Cum.
+--------------------+-----------------------------------
+precedent unaltered |     13,456       97.66       97.66
+  precedent altered |        323        2.34      100.00
+--------------------+-----------------------------------
+              Total |     13,779      100.00 */
