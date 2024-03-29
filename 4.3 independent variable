@@ -38,6 +38,20 @@ Interstate Relations |        119        0.87       96.46
 # ==================================
 Recode independent variable: Privacy
 # ==================================
-clonevar privacy = subject-matter
-recode 
+clonevar privacy = subject_matter
+recode privacy (1 2 3 4 6 7 8 9 10 11 12 13 14 = 0)(5 = 1)
+
+label define varprivacy 1 "Privacy" 0 "Not Privacy"
+label values privacy varprivacy 
+numlabel, add
+
+=tab privacy
+
+       privacy |      Freq.     Percent        Cum.
+---------------+-----------------------------------
+0. Not Privacy |     13,157       95.48       95.48
+    1. Privacy |        623        4.52      100.00
+---------------+-----------------------------------
+         Total |     13,780      100.00
+
 
