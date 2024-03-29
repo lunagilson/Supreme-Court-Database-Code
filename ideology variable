@@ -1,0 +1,120 @@
+# =======================
+Create Ideology Variable
+# =======================
+
+
+use "/Users/lunagilson/Desktop/Stata Thesis/martin_quinn_courtscores.dta"
+replace term = "1937" in 1
+replace term = "1937" in 2
+replace term = "1938" in 3
+replace term = "1938" in 4
+replace term = "1956" in 22
+replace term = "1956" in 23
+replace term = "2005" in 72
+replace term = "2005" in 73
+destring term, generate(term_n)
+
+//term: all characters numeric; term_n generated as int
+tab term_n
+drop term
+rename term_n term
+
+#  merge both datasets (MQ and Spaeth)
+use "/Users/lunagilson/Desktop/2023 CaseCentered Database (1:18).dta
+merge m:m term using  "/Users/lunagilson/Desktop/Stata Thesis/martin_quinn_courtscores.dta"
+tabstat med, by(term)
+
+# results
+Summary for variables: med
+Group variable: term (term of the court)
+
+    term |      Mean
+---------+----------
+    1937 |    -.4415
+    1938 |    -.6025
+    1939 |    -1.004
+    1940 |     -.626
+    1941 |     -.144
+    1942 |      .092
+    1943 |      .037
+    1944 |     -.086
+    1945 |      .066
+    1946 |      .246
+    1947 |      .447
+    1948 |      .548
+    1949 |      .881
+    1950 |      .931
+    1951 |      .932
+    1952 |     1.066
+    1953 |      .573
+    1954 |       .35
+    1955 |      .559
+    1956 |  .1629946
+    1957 |       .58
+    1958 |      .643
+    1959 |      .335
+    1960 |      .443
+    1961 |     -.041
+    1962 |    -1.079
+    1963 |    -1.133
+    1964 |     -.707
+    1965 |      -.56
+    1966 |     -.414
+    1967 |    -1.043
+    1968 |     -.896
+    1969 |       .19
+    1970 |      .381
+    1971 |       .64
+    1972 |      .945
+    1973 |      .609
+    1974 |      .615
+    1975 |      .492
+    1976 |      .473
+    1977 |      .233
+    1978 |      .156
+    1979 |       .24
+    1980 |      .231
+    1981 |      .266
+    1982 |      .673
+    1983 |      .877
+    1984 |      .828
+    1985 |      .932
+    1986 |      .878
+    1987 |      .972
+    1988 |     1.098
+    1989 |      .876
+    1990 |      .919
+    1991 |      .756
+    1992 |      .838
+    1993 |      .817
+    1994 |      .736
+    1995 |      .685
+    1996 |      .782
+    1997 |      .798
+    1998 |      .861
+    1999 |      .849
+    2000 |      .589
+    2001 |      .371
+    2002 |       .26
+    2003 |      .222
+    2004 |       .11
+    2005 |  .4929189
+    2006 |      .458
+    2007 |      .411
+    2008 |      .576
+    2009 |      .516
+    2010 |      .577
+    2011 |      .296
+    2012 |       .24
+    2013 |      .068
+    2014 |     -.227
+    2015 |     -.269
+    2016 |     -.059
+    2017 |      .298
+    2018 |      .402
+    2019 |      .355
+    2020 |      .741
+    2021 |      .827
+    2022 |         .
+---------+----------
+   Total |  .3764428
