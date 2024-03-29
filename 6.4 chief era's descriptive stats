@@ -1,0 +1,26 @@
+# ===========================
+Create Chief Justice Variable
+# ===========================
+
+encode chief, generate(chief_)
+recode chief_ (4 = 1)(5 = 2)(1 = 3)(2 = 4)(3 = 5)
+label define varchief 1 "Vinson" 2 "Warren" 3 "Burger" 4 "Rehnquist" 5 "Roberts"
+label values chief_ varchief
+tab chief_
+/*      chief |
+    justice |      Freq.     Percent        Cum.
+------------+-----------------------------------
+     Vinson |      1,442       10.46       10.46
+     Warren |      3,405       24.71       35.17
+     Burger |      4,259       30.91       66.08
+  Rehnquist |      2,995       21.73       87.82
+    Roberts |      1,679       12.18      100.00
+------------+-----------------------------------
+      Total |     13,780      100.00    */
+
+
+
+
+          Pearson chi2(4) =   6.6923   Pr = 0.153 */
+
+tab chief_ privacy if precedentAlteration==1, col
