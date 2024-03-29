@@ -1,0 +1,48 @@
+# ===============
+  CLARIFY PROGRAM
+# ===============
+
+estsimp logit precedentAlteration privacy
+
+Iteration 0:  Log likelihood = -1531.4836
+Iteration 1:  Log likelihood =  -1529.424
+Iteration 2:  Log likelihood = -1529.2572
+Iteration 3:  Log likelihood = -1529.2567
+
+Logistic regression                               Number of obs   =      13779
+                                                  LR chi2(1)      =       4.45
+                                                  Prob > chi2     =     0.0348
+Log likelihood = -1529.2567                       Pseudo R2       =     0.0015
+
+------------------------------------------------------------------------------
+precedentA~n | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+     privacy |    .496348   .2203525     2.25   0.024      .064465     .928231
+       _cons |  -3.757783   .0584048   -64.34   0.000    -3.872255   -3.643312
+------------------------------------------------------------------------------
+
+Simulating main parameters.  Please wait....
+% of simulations completed: 50% 100% 
+
+Number of simulations  : 1000
+Names of new variables : b1 b2
+
+setx privacy 0
+simqi
+
+      Quantity of Interest |     Mean       Std. Err.    [95% Conf. Interval]
+---------------------------+--------------------------------------------------
+     Pr(preced~n=0. prece) |   .9772524     .0013727     .9744383    .9797599
+     Pr(preced~n=1. prece) |   .0227476     .0013727     .0202401    .0255617
+
+setx privacy 1
+simqui
+command simqui is unrecognized
+r(199);
+
+Simqi
+
+      Quantity of Interest |     Mean       Std. Err.    [95% Conf. Interval]
+---------------------------+--------------------------------------------------
+     Pr(preced~n=0. prece) |   .9619004     .0079609     .9449739    .9756154
+     Pr(preced~n=1. prece) |   .0380996     .0079609     .0243846     .055026
