@@ -1,0 +1,129 @@
+                                                        ***LOGISTIC REGRESSION***
+
+logit precedentAlteration privacy med legalbasis change_in_comp term
+/*result of full model log regression 
+Iteration 0:  Log likelihood = -1390.0678  
+Iteration 1:  Log likelihood = -1334.1002  
+Iteration 2:  Log likelihood = -1325.8474  
+Iteration 3:  Log likelihood = -1325.8445  
+Iteration 4:  Log likelihood = -1325.8445  
+
+Logistic regression                                     Number of obs = 12,075
+                                                        LR chi2(5)    = 128.45
+                                                        Prob > chi2   = 0.0000
+Log likelihood = -1325.8445                             Pseudo R2     = 0.0462
+
+-------------------------------------------------------------------------------------
+precedentAlteration | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+            privacy |   .1976723   .2252933     0.88   0.380    -.2438945    .6392392
+                med |  -.3757677   .1014007    -3.71   0.000    -.5745094    -.177026
+         legalbasis |   1.229044   .1261781     9.74   0.000     .9817389    1.476348
+     change_in_comp |    .369495   .1221563     3.02   0.002     .1300731    .6089169
+               term |   .0043087   .0031841     1.35   0.176     -.001932    .0105495
+              _cons |  -12.86522   6.300041    -2.04   0.041    -25.21307   -.5173657
+-------------------------------------------------------------------------------------
+
+*/
+
+
+logit precedentAlteration privacy
+/*results of log regression between privacy and precedentAlteration, no control
+Iteration 0:  Log likelihood = -1531.4836  
+Iteration 1:  Log likelihood =  -1529.424  
+Iteration 2:  Log likelihood = -1529.2572  
+Iteration 3:  Log likelihood = -1529.2567  
+Iteration 4:  Log likelihood = -1529.2567  
+
+Logistic regression                                     Number of obs = 13,779
+                                                        LR chi2(1)    =   4.45
+                                                        Prob > chi2   = 0.0348
+Log likelihood = -1529.2567                             Pseudo R2     = 0.0015
+
+-------------------------------------------------------------------------------------
+precedentAlteration | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+       PrivacyDummy |    .496348   .2203544     2.25   0.024     .0644614    .9282346
+              _cons |  -3.757783   .0584048   -64.34   0.000    -3.872255   -3.643312
+-------------------------------------------------------------------------------------*/
+
+
+logit precedentAlteration privacy term
+/* regression (correlation) between privacy (IV) and term (control)
+Iteration 0:  Log likelihood = -2537.7738  
+Iteration 1:  Log likelihood = -2534.7352  
+Iteration 2:  Log likelihood =  -2534.728  
+Iteration 3:  Log likelihood =  -2534.728  
+
+Logistic regression                                     Number of obs = 13,780
+                                                        LR chi2(1)    =   6.09
+                                                        Prob > chi2   = 0.0136
+Log likelihood = -2534.728                              Pseudo R2     = 0.0012
+
+------------------------------------------------------------------------------
+PrivacyDummy | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        term |   .0051187   .0020662     2.48   0.013     .0010691    .0091683
+       _cons |  -13.18037   4.091155    -3.22   0.001    -21.19889   -5.161856
+------------------------------------------------------------------------------*/
+
+logit precedentAlteration privacy med
+/*privacy cases and ideology correlation
+Iteration 0:  Log likelihood = -2534.3408  
+Iteration 1:  Log likelihood = -2529.1408  
+Iteration 2:  Log likelihood = -2529.0844  
+Iteration 3:  Log likelihood = -2529.0844  
+
+Logistic regression                                     Number of obs = 13,706
+                                                        LR chi2(1)    =  10.51
+                                                        Prob > chi2   = 0.0012
+Log likelihood = -2529.0844                             Pseudo R2     = 0.0021
+
+------------------------------------------------------------------------------
+PrivacyDummy | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+         med |  -.2273099   .0685107    -3.32   0.001    -.3615885   -.0930314
+       _cons |  -2.966436   .0461509   -64.28   0.000     -3.05689   -2.875982
+------------------------------------------------------------------------------ */
+
+
+logit precedentAlteration privacy legalbasis
+/* privacy cases and legalbasis correlation
+Iteration 0:  Log likelihood =      -2270  
+Iteration 1:  Log likelihood =  -2147.772  
+Iteration 2:  Log likelihood = -2129.5431  
+Iteration 3:  Log likelihood = -2129.5396  
+Iteration 4:  Log likelihood = -2129.5396  
+
+Logistic regression                                     Number of obs = 12,148
+                                                        LR chi2(1)    = 280.92
+                                                        Prob > chi2   = 0.0000
+Log likelihood = -2129.5396                             Pseudo R2     = 0.0619
+
+------------------------------------------------------------------------------
+PrivacyDummy | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+  legalbasis |   1.506855   .0958696    15.72   0.000     1.318954    1.694756
+       _cons |  -3.847991   .0803994   -47.86   0.000    -4.005571   -3.690411
+----------------------------------------------------------------------------- */
+
+
+logit precedentAlteration privacy change_in_comp
+/* privacy cases and change in composition correlation
+Iteration 0:  Log likelihood = -2537.7738  
+Iteration 1:  Log likelihood = -2528.0948  
+Iteration 2:  Log likelihood = -2527.9936  
+Iteration 3:  Log likelihood = -2527.9935  
+
+Logistic regression                                     Number of obs = 13,780
+                                                        LR chi2(1)    =  19.56
+                                                        Prob > chi2   = 0.0000
+Log likelihood = -2527.9935                             Pseudo R2     = 0.0039
+
+--------------------------------------------------------------------------------
+  PrivacyDummy | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+---------------+----------------------------------------------------------------
+change_in_comp |  -.4051495   .0943048    -4.30   0.000    -.5899835   -.2203154
+         _cons |  -2.932307   .0474911   -61.74   0.000    -3.025387   -2.839226
+--------------------------------------------------------------------------------
+*/
