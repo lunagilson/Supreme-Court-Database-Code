@@ -1,0 +1,16 @@
+
+                                                        ***CHIEF JUSTICE REGRESSION***
+
+logit precedentAlteration privacy if chief_==1
+logit precedentAlteration privacy if chief_==2
+logit precedentAlteration privacy if chief_==3
+logit precedentAlteration privacy if chief_==4
+logit precedentAlteration privacy if chief_==5
+
+
+logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==1
+logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==2
+logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==3
+logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==4
+logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==5
+
