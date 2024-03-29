@@ -7,7 +7,7 @@ recode chief_ (4 = 1)(5 = 2)(1 = 3)(2 = 4)(3 = 5)
 label define varchief 1 "Vinson" 2 "Warren" 3 "Burger" 4 "Rehnquist" 5 "Roberts"
 label values chief_ varchief
 tab chief_
-/*      chief |
+/*    chief |
     justice |      Freq.     Percent        Cum.
 ------------+-----------------------------------
      Vinson |      1,442       10.46       10.46
@@ -19,8 +19,29 @@ tab chief_
       Total |     13,780      100.00    */
 
 
-
+tab chief precedentAlteration, row chi2
+/* precedentAlteration for each chief justice
+           | formal alteration of
+     chief |       precedent
+   justice | 0. preced  1. preced |     Total
+-----------+----------------------+----------
+    Burger |     4,164         95 |     4,259 
+           |     97.77       2.23 |    100.00 
+-----------+----------------------+----------
+ Rehnquist |     2,930         64 |     2,994 
+           |     97.86       2.14 |    100.00 
+-----------+----------------------+----------
+   Roberts |     1,631         48 |     1,679 
+           |     97.14       2.86 |    100.00 
+-----------+----------------------+----------
+    Vinson |     1,417         25 |     1,442 
+           |     98.27       1.73 |    100.00 
+-----------+----------------------+----------
+    Warren |     3,314         91 |     3,405 
+           |     97.33       2.67 |    100.00 
+-----------+----------------------+----------
+     Total |    13,456        323 |    13,779 
+           |     97.66       2.34 |    100.00 
 
           Pearson chi2(4) =   6.6923   Pr = 0.153 */
 
-tab chief_ privacy if precedentAlteration==1, col
