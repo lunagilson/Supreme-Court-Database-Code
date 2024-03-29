@@ -1,6 +1,7 @@
 # =======================
 Create Ideology Variable
 # =======================
+MERGE MARTIN AND QUINN DATABASE
 
 
 use "/Users/lunagilson/Desktop/Stata Thesis/martin_quinn_courtscores.dta"
