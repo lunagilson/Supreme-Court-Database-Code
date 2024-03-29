@@ -25,7 +25,15 @@ use "/Users/lunagilson/Desktop/2023 CaseCentered Database (1:18).dta
 merge m:m term using  "/Users/lunagilson/Desktop/Stata Thesis/martin_quinn_courtscores.dta"
 tabstat med, by(term)
 
-# results
+# RESULTS
+***********************************************
+sum med
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+         med |     13,706    .3770188    .5569253     -1.133      1.098
+***********************************************
+
 Summary for variables: med
 Group variable: term (term of the court)
 
