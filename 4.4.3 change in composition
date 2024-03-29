@@ -8,11 +8,17 @@ label define varchangeincomp 1 "Change in Composition" 0 "No Change in Compositi
 label values change_in_comp varchangeincomp
 drop if term < 1946		
 
-+ results of recode
-//RECODE of changeterm |
+
+# results of recode
+
+tab change_in_comp
+/* summary table for control - change in composition (binary)
+     RECODE of changeterm |
       (term of the court) |      Freq.     Percent        Cum.
 --------------------------+-----------------------------------
 No Change in Composition  |      9,233       67.00       67.00
     Change in Composition |      4,547       33.00      100.00
 --------------------------+-----------------------------------
-                    Total |     13,780      100.00
+                    Total |     13,780      100.00 */
+
+
