@@ -147,3 +147,199 @@ precedentAlteration | Coefficient  Std. err.      z    P>|z|     [95% conf. inte
               _cons |  -12.86522   6.300041    -2.04   0.041    -25.21307   -.5173657
 -------------------------------------------------------------------------------------
 
+
+# =====================
+  HOW I CREATED TABLES
+# =====================
+
+. logit precedentAlteration privacy
+
+Iteration 0:  Log likelihood = -1531.4836  
+Iteration 1:  Log likelihood =  -1529.424  
+Iteration 2:  Log likelihood = -1529.2572  
+Iteration 3:  Log likelihood = -1529.2567  
+Iteration 4:  Log likelihood = -1529.2567  
+
+Logistic regression                                     Number of obs = 13,779
+                                                        LR chi2(1)    =   4.45
+                                                        Prob > chi2   = 0.0348
+Log likelihood = -1529.2567                             Pseudo R2     = 0.0015
+
+-------------------------------------------------------------------------------------
+precedentAlteration | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+            privacy |    .496348   .2203544     2.25   0.024     .0644614    .9282346
+              _cons |  -3.757783   .0584048   -64.34   0.000    -3.872255   -3.643312
+-------------------------------------------------------------------------------------
+
+. estimates store model_1
+
+. logit precedentAlteration privacy med
+
+Iteration 0:  Log likelihood = -1522.2691  
+Iteration 1:  Log likelihood = -1515.2277  
+Iteration 2:  Log likelihood = -1514.8759  
+Iteration 3:  Log likelihood = -1514.8749  
+Iteration 4:  Log likelihood = -1514.8749  
+
+Logistic regression                                     Number of obs = 13,705
+                                                        LR chi2(2)    =  14.79
+                                                        Prob > chi2   = 0.0006
+Log likelihood = -1514.8749                             Pseudo R2     = 0.0049
+
+-------------------------------------------------------------------------------------
+precedentAlteration | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+            privacy |   .4724089   .2207071     2.14   0.032     .0398309    .9049869
+                med |  -.3038488   .0916833    -3.31   0.001    -.4835448   -.1241528
+              _cons |  -3.657737   .0640728   -57.09   0.000    -3.783317   -3.532156
+-------------------------------------------------------------------------------------
+
+. estimates store model_2
+
+. logit precedentAlteration privacy legalbasis
+
+Iteration 0:  Log likelihood = -1399.2469  
+Iteration 1:  Log likelihood = -1351.6397  
+Iteration 2:  Log likelihood = -1346.0496  
+Iteration 3:  Log likelihood = -1346.0441  
+Iteration 4:  Log likelihood = -1346.0441  
+
+Logistic regression                                     Number of obs = 12,148
+                                                        LR chi2(2)    = 106.41
+                                                        Prob > chi2   = 0.0000
+Log likelihood = -1346.0441                             Pseudo R2     = 0.0380
+
+-------------------------------------------------------------------------------------
+precedentAlteration | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+            privacy |   .1870837   .2243972     0.83   0.404    -.2527267    .6268941
+         legalbasis |   1.218189   .1256613     9.69   0.000      .971897     1.46448
+              _cons |  -4.327671   .1013228   -42.71   0.000     -4.52626   -4.129082
+-------------------------------------------------------------------------------------
+
+. estimates store model_3
+
+. logit precedentAlteration privacy change_in_comp
+
+Iteration 0:  Log likelihood = -1531.4836  
+Iteration 1:  Log likelihood = -1524.7619  
+Iteration 2:  Log likelihood =   -1524.51  
+Iteration 3:  Log likelihood = -1524.5093  
+Iteration 4:  Log likelihood = -1524.5093  
+
+Logistic regression                                     Number of obs = 13,779
+                                                        LR chi2(2)    =  13.95
+                                                        Prob > chi2   = 0.0009
+Log likelihood = -1524.5093                             Pseudo R2     = 0.0046
+
+-------------------------------------------------------------------------------------
+precedentAlteration | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+            privacy |   .5285793   .2207386     2.39   0.017     .0959396     .961219
+     change_in_comp |   .3582948   .1148349     3.12   0.002     .1332226     .583367
+              _cons |  -3.891434   .0752779   -51.69   0.000    -4.038976   -3.743892
+-------------------------------------------------------------------------------------
+
+. estimates store model_4
+
+. logit precedentAlteration privacy term
+
+Iteration 0:  Log likelihood = -1531.4836  
+Iteration 1:  Log likelihood = -1529.0545  
+Iteration 2:  Log likelihood = -1528.8852  
+Iteration 3:  Log likelihood = -1528.8847  
+Iteration 4:  Log likelihood = -1528.8847  
+
+Logistic regression                                     Number of obs = 13,779
+                                                        LR chi2(2)    =   5.20
+                                                        Prob > chi2   = 0.0744
+Log likelihood = -1528.8847                             Pseudo R2     = 0.0017
+
+-------------------------------------------------------------------------------------
+precedentAlteration | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+            privacy |   .4917719   .2204149     2.23   0.026     .0597666    .9237772
+               term |   .0024765   .0028644     0.86   0.387    -.0031376    .0080907
+              _cons |  -8.657665   5.668994    -1.53   0.127    -19.76869    2.453359
+-------------------------------------------------------------------------------------
+
+. estimates store model_5
+
+. logit precedentAlteration privacy med legalbasis change_in_comp term
+
+Iteration 0:  Log likelihood = -1390.0678  
+Iteration 1:  Log likelihood = -1334.1002  
+Iteration 2:  Log likelihood = -1325.8474  
+Iteration 3:  Log likelihood = -1325.8445  
+Iteration 4:  Log likelihood = -1325.8445  
+
+Logistic regression                                     Number of obs = 12,075
+                                                        LR chi2(5)    = 128.45
+                                                        Prob > chi2   = 0.0000
+Log likelihood = -1325.8445                             Pseudo R2     = 0.0462
+
+-------------------------------------------------------------------------------------
+precedentAlteration | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+--------------------+----------------------------------------------------------------
+            privacy |   .1976723   .2252933     0.88   0.380    -.2438945    .6392392
+                med |  -.3757677   .1014007    -3.71   0.000    -.5745094    -.177026
+         legalbasis |   1.229044   .1261781     9.74   0.000     .9817389    1.476348
+     change_in_comp |    .369495   .1221563     3.02   0.002     .1300731    .6089169
+               term |   .0043087   .0031841     1.35   0.176     -.001932    .0105495
+              _cons |  -12.86522   6.300041    -2.04   0.041    -25.21307   -.5173657
+-------------------------------------------------------------------------------------
+
+. estimates store model_6
+
+. 
+. esttab model_1 model_2 model_3 model_4 model_5 model_6
+
+----------------------------------------------------------------------------------------------------------
+> --
+                      (1)             (2)             (3)             (4)             (5)             (6) 
+>   
+             precedentA~n    precedentA~n    precedentA~n    precedentA~n    precedentA~n    precedentA~n 
+>   
+----------------------------------------------------------------------------------------------------------
+> --
+precedentA~n                                                                                              
+>   
+privacy             0.496*          0.472*          0.187           0.529*          0.492*          0.198 
+>   
+                   (2.25)          (2.14)          (0.83)          (2.39)          (2.23)          (0.88) 
+>   
+
+med                                -0.304***                                                       -0.376*
+> **
+                                  (-3.31)                                                         (-3.71) 
+>   
+
+legalbasis                                          1.218***                                        1.229*
+> **
+                                                   (9.69)                                          (9.74) 
+>   
+
+change_in_~p                                                        0.358**                         0.369*
+> * 
+                                                                   (3.12)                          (3.02) 
+>   
+
+term                                                                              0.00248         0.00431 
+>   
+                                                                                   (0.86)          (1.35) 
+>   
+
+_cons              -3.758***       -3.658***       -4.328***       -3.891***       -8.658          -12.87*
+>   
+                 (-64.34)        (-57.09)        (-42.71)        (-51.69)         (-1.53)         (-2.04) 
+>   
+----------------------------------------------------------------------------------------------------------
+> --
+N                   13779           13705           12148           13779           13779           12075 
+>   
+----------------------------------------------------------------------------------------------------------
+> --
+t statistics in parentheses
+* p<0.05, ** p<0.01, *** p<0.001
+
