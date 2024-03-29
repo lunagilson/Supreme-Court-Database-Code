@@ -1,0 +1,73 @@
+*** DESCRIPTIVE ANALYSIS *** 
+ 
+summarize med
+ /* summary table for ideology (continous)
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+         med |     13,706    .3770188    .5569253     -1.133      1.098
+*/ 
+ 
+tab subject_matter
+/* Summary table for subject_matter (nominal)
+           RECODE of |
+subjectMatter (issue |
+area of case (fine)) |      Freq.     Percent        Cum.
+---------------------+-----------------------------------
+  Criminal Procedure |      2,410       17.58       17.58
+        Civil Rights |      2,260       16.48       34.06
+     First Amendment |      1,073        7.83       41.89
+         Due Process |        608        4.43       46.32
+             Privacy |        623        4.54       50.87
+           Attorneys |        140        1.02       51.89
+              Unions |        916        6.68       58.57
+   Economic Activity |      2,300       16.78       75.35
+      Judicial Power |      2,026       14.78       90.12
+          Federalism |        750        5.47       95.59
+Interstate Relations |        119        0.87       96.46
+    Federal Taxation |        401        2.92       99.39
+       Miscellaneous |         77        0.56       99.95
+         Private Law |          7        0.05      100.00
+---------------------+-----------------------------------
+               Total |     13,710      100.00 */ 
+numlabel, add
+			   
+tab privacy
+/* summary table for binary variable including only privacycase (binary)
+    privacy |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |     13,157       95.48       95.48
+          1 |        623        4.52      100.00
+------------+-----------------------------------
+      Total |     13,780      100.00
+	  */ 
+
+tab precedentAlteration
+/*summary table for DV- precedent alteration (binary)
+  formal alteration |
+       of precedent |      Freq.     Percent        Cum.
+--------------------+-----------------------------------
+precedent unaltered |     13,456       97.66       97.66
+  precedent altered |        323        2.34      100.00
+--------------------+-----------------------------------
+              Total |     13,779      100.00 */
+
+tab legalbasis
+/* summary table for legal basis 
+
+                        legalbasis |      Freq.     Percent        Cum.
+-----------------------------------+-----------------------------------
+0.Not Constitutional Interpretation) |      7,568       62.30       62.30
+    1. Constitutional Interpretation |      4,580       37.70      100.00
+-----------------------------------+-----------------------------------
+                             Total |     12,148      100.00     */
+
+tab change_in_comp
+/* summary table for control - change in composition (binary)
+     RECODE of changeterm |
+      (term of the court) |      Freq.     Percent        Cum.
+--------------------------+-----------------------------------
+No Change in Composition  |      9,233       67.00       67.00
+    Change in Composition |      4,547       33.00      100.00
+--------------------------+-----------------------------------
+                    Total |     13,780      100.00 */
+
