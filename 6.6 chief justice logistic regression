@@ -14,3 +14,39 @@ logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==
 logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==4
 logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==5
 
+# =========================
+  SAVE CHIEF JUSTICE MODELS
+# =========================
+eststo clear
+logit precedentAlteration privacy if chief_==1
+eststo model1a
+logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==1
+eststo model1b
+
+logit precedentAlteration privacy if chief_==2
+eststo model2a
+logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==2
+eststo model2b 
+
+logit precedentAlteration privacy if chief_==3
+eststo model3a
+logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==3
+eststo model3b
+
+logit precedentAlteration privacy if chief_==4
+eststo model4a
+logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==4
+eststo model4b
+
+logit precedentAlteration privacy if chief_==5
+eststo model5a
+logit precedentAlteration privacy med legalbasis change_in_comp term if chief_==5
+eststo model5b
+
+
+esttab model1a model1b model2a model2b model3a model3b model4a model4b model5a model5b using chiefjusticer
+> egression.tex, replace 
+
+
+
+
