@@ -1,0 +1,28 @@
+ 		  *** CHI SQUARED ***
+/* Chi-square test of independence
+are the category proportions of one variable 
+the same across levels of another variable?
+syntax: tab var1 var2, chi2 */
+
+tab subject_matter precedentAlteration, chi2
+/* results of chi-sqaured test 
+		   RECODE of | formal alteration of
+subjectMatter (issue |       precedent
+area of case (fine)) | precedent  precedent |     Total
+---------------------+----------------------+----------
+  Criminal Procedure |     2,336         74 |     2,410 
+        Civil Rights |     2,203         57 |     2,260 
+     First Amendment |     1,053         20 |     1,073 
+         Due Process |       597         11 |       608 
+             Privacy |       600         23 |       623 
+           Attorneys |       138          2 |       140 
+              Unions |       889         27 |       916 
+   Economic Activity |     2,252         48 |     2,300 
+      Judicial Power |     1,996         30 |     2,026 
+          Federalism |       723         27 |       750 
+Interstate Relations |       119          0 |       119 
+    Federal Taxation |       397          4 |       401 
+---------------------+----------------------+----------
+               Total |    13,303        323 |    13,626 
+
+         Pearson chi2(11) =  32.6841   Pr = 0.001 */ 
